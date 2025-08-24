@@ -134,7 +134,7 @@ class _ParticipationCardWidgetState extends State<ParticipationCardWidget> {
                     });
                     widget.onEnrollmentToggle(value);
                   },
-                  activeColor: AppTheme.lightTheme.colorScheme.primary,
+                  activeThumbColor: AppTheme.lightTheme.colorScheme.primary,
                 ),
                 SizedBox(width: 3.w),
                 Expanded(

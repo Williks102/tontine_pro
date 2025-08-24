@@ -7,7 +7,6 @@ import '../presentation/seasonal_f_te_module_screen/seasonal_f_te_module_screen.
 import '../presentation/registration_screen/registration_screen.dart';
 
 class AppRoutes {
-  // TODO: Add your routes here
   static const String initial = '/';
   static const String dashboard = '/dashboard-screen';
   static const String referralSystem = '/referral-system-screen';
@@ -24,6 +23,6 @@ class AppRoutes {
     identityVerification: (context) => const IdentityVerificationScreen(),
     seasonalFTeModule: (context) => const SeasonalFTeModuleScreen(),
     registration: (context) => const RegistrationScreen(),
-    // TODO: Add your other routes here
+   
   };
 }

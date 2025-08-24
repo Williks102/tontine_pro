@@ -2,12 +2,9 @@ import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:record/record.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
-import '../../../theme/app_theme.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class VideoRecordingWidget extends StatefulWidget {
   final Function(String?) onVideoRecorded;

@@ -146,12 +146,12 @@ class AppTheme {
     ),
 
     // Card theme with subtle elevation
-    cardTheme: CardTheme(
+    cardTheme: const CardThemeData(
       color: cardLight,
       elevation: 2.0,
       shadowColor: shadowLight,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12.0))),
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     ),
 
     // Bottom navigation with violet selection
@@ -312,7 +312,7 @@ class AppTheme {
     ),
 
     // Tab bar theme with violet selection
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       labelColor: primaryLight,
       unselectedLabelColor: textSecondaryLight,
       indicatorColor: primaryLight,
@@ -353,11 +353,11 @@ class AppTheme {
     ),
 
     // Dialog theme
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       backgroundColor: dialogLight,
       elevation: 8,
       shadowColor: shadowLight,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
       titleTextStyle: GoogleFonts.inter(
         fontSize: 20,
         fontWeight: FontWeight.w600,
@@ -443,12 +443,12 @@ class AppTheme {
     ),
 
     // Card theme with subtle elevation
-    cardTheme: CardTheme(
+    cardTheme: const CardThemeData(
       color: cardDark,
       elevation: 2.0,
       shadowColor: shadowDark,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12.0))),
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     ),
 
     // Bottom navigation with violet selection (dark)
@@ -609,7 +609,7 @@ class AppTheme {
     ),
 
     // Tab bar theme with violet selection (dark)
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       labelColor: primaryDark,
       unselectedLabelColor: textSecondaryDark,
       indicatorColor: primaryDark,
@@ -650,11 +650,11 @@ class AppTheme {
     ),
 
     // Dialog theme
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       backgroundColor: dialogDark,
       elevation: 8,
       shadowColor: shadowDark,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16))),
       titleTextStyle: GoogleFonts.inter(
         fontSize: 20,
         fontWeight: FontWeight.w600,

@@ -149,7 +149,7 @@ class _NotificationSettingsCardState extends State<NotificationSettingsCard> {
               });
               widget.onSettingChanged(key, value);
             },
-            activeColor: AppTheme.lightTheme.primaryColor,
+            activeThumbColor: AppTheme.lightTheme.primaryColor,
             inactiveThumbColor:
                 AppTheme.lightTheme.colorScheme.onSurfaceVariant,
             inactiveTrackColor:
