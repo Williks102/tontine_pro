@@ -54,7 +54,7 @@ class PersonalInfoSection extends StatelessWidget {
               color: AppTheme.lightTheme.colorScheme.primary,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Row(
             children: [
               Expanded(
@@ -73,7 +73,7 @@ class PersonalInfoSection extends StatelessWidget {
                           child: CustomIconWidget(
                             iconName: 'person',
                             color: AppTheme.lightTheme.colorScheme.primary,
-                            size: 5.w,
+                            size: 5,
                           ),
                         ),
                       ),
@@ -100,7 +100,7 @@ class PersonalInfoSection extends StatelessWidget {
                           child: CustomIconWidget(
                             iconName: 'person_outline',
                             color: AppTheme.lightTheme.colorScheme.primary,
-                            size: 5.w,
+                            size: 5,
                           ),
                         ),
                       ),
@@ -112,7 +112,7 @@ class PersonalInfoSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           TextFormField(
             controller: emailController,
             onChanged: onEmailChanged,
@@ -125,14 +125,14 @@ class PersonalInfoSection extends StatelessWidget {
                 child: CustomIconWidget(
                   iconName: 'email',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 5.w,
+                  size: 5,
                 ),
               ),
             ),
             keyboardType: TextInputType.emailAddress,
             autocorrect: false,
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           TextFormField(
             controller: phoneController,
             onChanged: onPhoneChanged,
@@ -145,7 +145,7 @@ class PersonalInfoSection extends StatelessWidget {
                 child: CustomIconWidget(
                   iconName: 'phone',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 5.w,
+                  size: 5,
                 ),
               ),
             ),

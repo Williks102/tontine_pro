@@ -61,7 +61,7 @@ class PaymentStatusWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.5.h),
+                padding: EdgeInsets.symmetric(horizontal: 3, vertical: 0.5),
                 decoration: BoxDecoration(
                   color: _getStatusColor().withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
@@ -76,7 +76,7 @@ class PaymentStatusWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
@@ -158,7 +158,7 @@ class PaymentStatusWidget extends StatelessWidget {
                   ],
                 ),
                 if (daysRemaining > 0 && !isOverdue) ...[
-                  SizedBox(height: 2.h),
+                  SizedBox(height: 2),
                   Container(
                     width: double.infinity,
                     height: 6,
@@ -178,7 +178,7 @@ class PaymentStatusWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 1.h),
+                  SizedBox(height: 1),
                   Text(
                     'Temps restant dans le cycle de 10 jours',
                     style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(

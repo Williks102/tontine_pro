@@ -30,7 +30,7 @@ class DebugScreen extends StatelessWidget {
             padding: EdgeInsets.all(4.w),
             child: Column(
               children: [
-                SizedBox(height: 4.h),
+                SizedBox(height: 4),
                 
                 // Logo et titre
                 Container(
@@ -44,10 +44,10 @@ class DebugScreen extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.developer_mode,
-                        size: 15.w,
+                        size: 15,
                         color: Colors.white,
                       ),
-                      SizedBox(height: 2.h),
+                      SizedBox(height: 2),
                       Text(
                         'TONTINE PRO',
                         style: TextStyle(
@@ -57,7 +57,7 @@ class DebugScreen extends StatelessWidget {
                           letterSpacing: 2,
                         ),
                       ),
-                      SizedBox(height: 1.h),
+                      SizedBox(height: 1),
                       Text(
                         'Mode Développement',
                         style: TextStyle(
@@ -69,13 +69,13 @@ class DebugScreen extends StatelessWidget {
                   ),
                 ),
                 
-                SizedBox(height: 4.h),
+                SizedBox(height: 4),
                 
                 // Menu des écrans - Version scrollable
                 Expanded(
                   child: SingleChildScrollView(
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 2.h),
+                      margin: EdgeInsets.only(bottom: 2),
                       padding: EdgeInsets.all(4.w),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -100,7 +100,7 @@ class DebugScreen extends StatelessWidget {
                               color: TontineColors.primaryPurple,
                             ),
                           ),
-                          SizedBox(height: 3.h),
+                          SizedBox(height: 3),
                           
                           // Cards de navigation
                           _buildNavigationCard(
@@ -157,7 +157,7 @@ class DebugScreen extends StatelessWidget {
                             color: Colors.teal,
                           ),
                           
-                          SizedBox(height: 2.h),
+                          SizedBox(height: 2),
                           
                           // Info développement
                           Container(
@@ -171,7 +171,7 @@ class DebugScreen extends StatelessWidget {
                                 Icon(
                                   Icons.info_outline,
                                   color: Colors.grey[600],
-                                  size: 5.w,
+                                  size: 5,
                                 ),
                                 SizedBox(width: 3.w),
                                 Expanded(
@@ -208,7 +208,7 @@ class DebugScreen extends StatelessWidget {
     required Color color,
   }) {
     return Container(
-      margin: EdgeInsets.only(bottom: 2.h),
+      margin: EdgeInsets.only(bottom: 2),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -225,8 +225,8 @@ class DebugScreen extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 12.w,
-                  height: 12.w,
+                  width: 12,
+                  height: 12,
                   decoration: BoxDecoration(
                     color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
@@ -234,7 +234,7 @@ class DebugScreen extends StatelessWidget {
                   child: Icon(
                     icon,
                     color: color,
-                    size: 6.w,
+                    size: 6,
                   ),
                 ),
                 SizedBox(width: 4.w),
@@ -250,7 +250,7 @@ class DebugScreen extends StatelessWidget {
                           color: Colors.grey[800],
                         ),
                       ),
-                      SizedBox(height: 0.5.h),
+                      SizedBox(height: 0.5),
                       Text(
                         subtitle,
                         style: TextStyle(
@@ -264,7 +264,7 @@ class DebugScreen extends StatelessWidget {
                 Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.grey[400],
-                  size: 4.w,
+                  size: 4,
                 ),
               ],
             ),

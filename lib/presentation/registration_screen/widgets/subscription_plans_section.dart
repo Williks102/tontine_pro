@@ -100,9 +100,9 @@ class SubscriptionPlansSection extends StatelessWidget {
               color: AppTheme.lightTheme.colorScheme.primary,
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           SizedBox(
-            height: 35.h,
+            height: 35,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: subscriptionPlans.length,
@@ -115,7 +115,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                 return GestureDetector(
                   onTap: () => onPlanSelected(plan["id"] as String),
                   child: Container(
-                    width: 70.w,
+                    width: 70,
                     decoration: BoxDecoration(
                       color: isSelected
                           ? (plan["color"] as Color).withValues(alpha: 0.1)
@@ -126,14 +126,14 @@ class SubscriptionPlansSection extends StatelessWidget {
                             ? (plan["color"] as Color)
                             : AppTheme.lightTheme.colorScheme.outline
                                 .withValues(alpha: 0.3),
-                        width: isSelected ? 0.5.w : 0.25.w,
+                        width: isSelected ? 0.5.w : 0.25,
                       ),
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
                                 color: (plan["color"] as Color)
                                     .withValues(alpha: 0.2),
-                                blurRadius: 2.w,
+                                blurRadius: 2,
                                 offset: Offset(0, 1.w),
                               ),
                             ]
@@ -147,8 +147,8 @@ class SubscriptionPlansSection extends StatelessWidget {
                             right: 0,
                             child: Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 3.w,
-                                vertical: 1.h,
+                                horizontal: 3,
+                                vertical: 1,
                               ),
                               decoration: BoxDecoration(
                                 color: AppTheme.lightTheme.colorScheme.primary,
@@ -173,12 +173,12 @@ class SubscriptionPlansSection extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: isPopular ? 3.h : 1.h),
+                              SizedBox(height: isPopular ? 3 : 1),
                               Row(
                                 children: [
                                   Container(
-                                    width: 1.w,
-                                    height: 6.h,
+                                    width: 1,
+                                    height: 6,
                                     decoration: BoxDecoration(
                                       color: plan["color"] as Color,
                                       borderRadius: BorderRadius.circular(1.w),
@@ -199,7 +199,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                                             color: plan["color"] as Color,
                                           ),
                                         ),
-                                        SizedBox(height: 0.5.h),
+                                        SizedBox(height: 0.5),
                                         RichText(
                                           text: TextSpan(
                                             children: [
@@ -244,7 +244,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 2.h),
+                              SizedBox(height: 2),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -259,7 +259,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                                             .onSurfaceVariant,
                                       ),
                                     ),
-                                    SizedBox(height: 1.h),
+                                    SizedBox(height: 1),
                                     Expanded(
                                       child: ListView.separated(
                                         physics:
@@ -267,7 +267,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                                         itemCount:
                                             (plan["features"] as List).length,
                                         separatorBuilder: (context, index) =>
-                                            SizedBox(height: 0.5.h),
+                                            SizedBox(height: 0.5),
                                         itemBuilder: (context, featureIndex) {
                                           return Row(
                                             crossAxisAlignment:
@@ -275,11 +275,11 @@ class SubscriptionPlansSection extends StatelessWidget {
                                             children: [
                                               Container(
                                                 margin:
-                                                    EdgeInsets.only(top: 0.5.h),
+                                                    EdgeInsets.only(top: 0.5),
                                                 child: CustomIconWidget(
                                                   iconName: 'check_circle',
                                                   color: plan["color"] as Color,
-                                                  size: 4.w,
+                                                  size: 4,
                                                 ),
                                               ),
                                               SizedBox(width: 2.w),
@@ -307,7 +307,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                               if (isSelected)
                                 Container(
                                   width: double.infinity,
-                                  padding: EdgeInsets.symmetric(vertical: 1.h),
+                                  padding: EdgeInsets.symmetric(vertical: 1),
                                   decoration: BoxDecoration(
                                     color: plan["color"] as Color,
                                     borderRadius: BorderRadius.circular(2.w),
@@ -318,7 +318,7 @@ class SubscriptionPlansSection extends StatelessWidget {
                                       CustomIconWidget(
                                         iconName: 'check',
                                         color: Colors.white,
-                                        size: 4.w,
+                                        size: 4,
                                       ),
                                       SizedBox(width: 2.w),
                                       Text(

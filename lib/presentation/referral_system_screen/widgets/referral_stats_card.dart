@@ -22,7 +22,7 @@ class ReferralStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 42.w,
+      width: 42,
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
@@ -53,14 +53,14 @@ class ReferralStatsCard extends StatelessWidget {
                 child: CustomIconWidget(
                   iconName: iconData.codePoint.toString(),
                   color: accentColor,
-                  size: 5.w,
+                  size: 5,
                 ),
               ),
               const Spacer(),
               CustomIconWidget(
                 iconName: 'trending_up',
                 color: AppTheme.lightTheme.colorScheme.tertiary,
-                size: 4.w,
+                size: 4,
               ),
             ],
           ),

@@ -15,7 +15,7 @@ class GroupInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
@@ -69,7 +69,7 @@ class GroupInfoCard extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+                padding: EdgeInsets.symmetric(horizontal: 3, vertical: 1),
                 decoration: BoxDecoration(
                   color: _getStatusColor(groupData['status'] as String)
                       .withValues(alpha: 0.1),
@@ -85,7 +85,7 @@ class GroupInfoCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Row(
             children: [
               Expanded(
@@ -98,7 +98,7 @@ class GroupInfoCard extends StatelessWidget {
               ),
               Container(
                 width: 1,
-                height: 6.h,
+                height: 6,
                 color: AppTheme.lightTheme.dividerColor,
               ),
               Expanded(
@@ -111,7 +111,7 @@ class GroupInfoCard extends StatelessWidget {
               ),
               Container(
                 width: 1,
-                height: 6.h,
+                height: 6,
                 color: AppTheme.lightTheme.dividerColor,
               ),
               Expanded(
@@ -125,7 +125,7 @@ class GroupInfoCard extends StatelessWidget {
             ],
           ),
           if (groupData['announcement'] != null) ...[
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(3.w),
@@ -168,7 +168,7 @@ class GroupInfoCard extends StatelessWidget {
           color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
           size: 20,
         ),
-        SizedBox(height: 1.h),
+        SizedBox(height: 1),
         Text(
           value,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(

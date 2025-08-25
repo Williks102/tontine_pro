@@ -64,7 +64,7 @@ class MemberListItem extends StatelessWidget {
         return false;
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+        margin: EdgeInsets.symmetric(horizontal: 4, vertical: 1),
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(12),
@@ -74,12 +74,12 @@ class MemberListItem extends StatelessWidget {
           ),
         ),
         child: ListTile(
-          contentPadding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+          contentPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 1),
           leading: Stack(
             children: [
               Container(
-                width: 12.w,
-                height: 12.w,
+                width: 12,
+                height: 12,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
@@ -90,8 +90,8 @@ class MemberListItem extends StatelessWidget {
                 child: ClipOval(
                   child: CustomImageWidget(
                     imageUrl: memberData['avatar'] as String,
-                    width: 12.w,
-                    height: 12.w,
+                    width: 12,
+                    height: 12,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -100,8 +100,8 @@ class MemberListItem extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 child: Container(
-                  width: 4.w,
-                  height: 4.w,
+                  width: 4,
+                  height: 4,
                   decoration: BoxDecoration(
                     color: _getPaymentStatusColor(),
                     shape: BoxShape.circle,
@@ -126,7 +126,7 @@ class MemberListItem extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
+                padding: EdgeInsets.symmetric(horizontal: 2, vertical: 0.5),
                 decoration: BoxDecoration(
                   color: AppTheme.lightTheme.colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(12),
@@ -144,7 +144,7 @@ class MemberListItem extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               Row(
                 children: [
                   CustomIconWidget(
@@ -170,7 +170,7 @@ class MemberListItem extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               _buildProgressIndicator(),
             ],
           ),
@@ -213,7 +213,7 @@ class MemberListItem extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 0.5.h),
+        SizedBox(height: 0.5),
         LinearProgressIndicator(
           value: progress,
           backgroundColor: AppTheme.lightTheme.colorScheme.primaryContainer,
@@ -267,21 +267,21 @@ class MemberListItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 12.w,
-              height: 0.5.h,
+              width: 12,
+              height: 0.5,
               decoration: BoxDecoration(
                 color: AppTheme.lightTheme.dividerColor,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Text(
               memberData['name'] as String,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             if (onViewProfile != null)
               ListTile(
                 leading: CustomIconWidget(
@@ -321,7 +321,7 @@ class MemberListItem extends StatelessWidget {
                   onReportIssue?.call();
                 },
               ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
           ],
         ),
       ),

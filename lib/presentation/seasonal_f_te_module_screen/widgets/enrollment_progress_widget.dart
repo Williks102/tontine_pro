@@ -22,7 +22,7 @@ class EnrollmentProgressWidget extends StatelessWidget {
 
     return Card(
       elevation: 2,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3.w),
       ),
@@ -36,7 +36,7 @@ class EnrollmentProgressWidget extends StatelessWidget {
                 CustomIconWidget(
                   iconName: 'trending_up',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 6.w,
+                  size: 6,
                 ),
                 SizedBox(width: 3.w),
                 Text(
@@ -47,7 +47,7 @@ class EnrollmentProgressWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -64,13 +64,13 @@ class EnrollmentProgressWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 1.h),
+            SizedBox(height: 1),
             Container(
               width: double.infinity,
-              height: 1.h,
+              height: 1,
               decoration: BoxDecoration(
                 color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(1.h),
+                borderRadius: BorderRadius.circular(1),
               ),
               child: FractionallySizedBox(
                 alignment: Alignment.centerLeft,
@@ -84,28 +84,28 @@ class EnrollmentProgressWidget extends StatelessWidget {
                             .withValues(alpha: 0.7),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(1.h),
+                    borderRadius: BorderRadius.circular(1),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 1.h),
+            SizedBox(height: 1),
             Text(
               '${(progressPercentage * 100).round()}% de l\'objectif atteint',
               style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
                 color: Colors.grey.shade600,
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Text(
               'Derniers participants:',
               style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             SizedBox(
-              height: 8.h,
+              height: 8,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemCount: recentParticipants.length,
@@ -116,8 +116,8 @@ class EnrollmentProgressWidget extends StatelessWidget {
                   return Column(
                     children: [
                       Container(
-                        width: 12.w,
-                        height: 12.w,
+                        width: 12,
+                        height: 12,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -128,15 +128,15 @@ class EnrollmentProgressWidget extends StatelessWidget {
                         child: ClipOval(
                           child: CustomImageWidget(
                             imageUrl: participant["avatar"] as String,
-                            width: 12.w,
-                            height: 12.w,
+                            width: 12,
+                            height: 12,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      SizedBox(height: 0.5.h),
+                      SizedBox(height: 0.5),
                       SizedBox(
-                        width: 15.w,
+                        width: 15,
                         child: Text(
                           participant["name"] as String,
                           style: AppTheme.lightTheme.textTheme.labelSmall,
@@ -150,7 +150,7 @@ class EnrollmentProgressWidget extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(3.w),
@@ -171,7 +171,7 @@ class EnrollmentProgressWidget extends StatelessWidget {
                   CustomIconWidget(
                     iconName: 'group',
                     color: Colors.blue.shade600,
-                    size: 5.w,
+                    size: 5,
                   ),
                   SizedBox(width: 2.w),
                   Expanded(

@@ -8,6 +8,7 @@ import './widgets/gift_package_carousel_widget.dart';
 import './widgets/participation_card_widget.dart';
 import './widgets/pickup_scheduling_widget.dart';
 import './widgets/seasonal_header_widget.dart';
+import '../../widgets/tontine_main_drawer.dart';
 
 class SeasonalFTeModuleScreen extends StatefulWidget {
   const SeasonalFTeModuleScreen({Key? key}) : super(key: key);
@@ -169,7 +170,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
               CustomIconWidget(
                 iconName: 'payment',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 25,
               ),
               SizedBox(width: 2.w),
               Text(
@@ -198,7 +199,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                       'Montant à payer',
                       style: AppTheme.lightTheme.textTheme.bodyMedium,
                     ),
-                    SizedBox(height: 1.h),
+                    SizedBox(height: 1),
                     Text(
                       '4 200 FCFA',
                       style:
@@ -210,20 +211,20 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 3),
               Text(
                 'Choisissez votre méthode de paiement:',
                 style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               _buildPaymentOption(
                   'Orange Money', 'phone_android', Colors.orange),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               _buildPaymentOption(
                   'Wave', 'account_balance_wallet', Colors.blue),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               _buildPaymentOption(
                   'Carte Bancaire', 'credit_card', Colors.green),
             ],
@@ -266,7 +267,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
               child: CustomIconWidget(
                 iconName: iconName,
                 color: color,
-                size: 5.w,
+                size: 20,
               ),
             ),
             SizedBox(width: 3.w),
@@ -280,7 +281,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
             CustomIconWidget(
               iconName: 'arrow_forward_ios',
               color: Colors.grey.shade400,
-              size: 4.w,
+              size: 20,
             ),
           ],
         ),
@@ -301,7 +302,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
               CircularProgressIndicator(
                 color: AppTheme.lightTheme.colorScheme.primary,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 'Traitement du paiement...',
                 style: AppTheme.lightTheme.textTheme.titleMedium,
@@ -354,31 +355,31 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                 child: CustomImageWidget(
                   imageUrl: package["image"] as String,
                   width: double.infinity,
-                  height: 20.h,
+                  height: 20,
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 package["description"] as String,
                 style: AppTheme.lightTheme.textTheme.bodyMedium,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 'Contenu du package:',
                 style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               ...(package["items"] as List).map((item) => Padding(
-                    padding: EdgeInsets.only(bottom: 0.5.h),
+                    padding: EdgeInsets.only(bottom: 0.5),
                     child: Row(
                       children: [
                         CustomIconWidget(
                           iconName: 'check_circle',
                           color: Colors.green,
-                          size: 4.w,
+                          size: 4,
                         ),
                         SizedBox(width: 2.w),
                         Text(
@@ -388,7 +389,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                       ],
                     ),
                   )),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(2.w),
@@ -452,9 +453,21 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
   @override
   Widget build(BuildContext context) {
     final deadlineDate = DateTime.now().add(const Duration(days: 12, hours: 8));
+    final userProfile = {
+    'name': 'Marie Kouassi',
+    'id': 'TN-001', 
+    'avatar': 'https://via.placeholder.com/150',
+    'status': 'active',
+  };
 
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+
+  drawer: TontineMainDrawer(
+  userProfile: userProfile,
+  currentSelectedIndex: 2, // 2 = Groupes, 3 = Parrainages, etc.
+),
+
       appBar: AppBar(
         title: Text(
           'Module Fête Saisonnière',
@@ -469,7 +482,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
           icon: CustomIconWidget(
             iconName: 'arrow_back',
             color: AppTheme.lightTheme.colorScheme.onSurface,
-            size: 6.w,
+            size: 25,
           ),
         ),
         actions: [
@@ -480,7 +493,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
             icon: CustomIconWidget(
               iconName: 'home',
               color: AppTheme.lightTheme.colorScheme.onSurface,
-              size: 6.w,
+              size: 25,
             ),
           ),
         ],
@@ -489,36 +502,36 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             SeasonalHeaderWidget(
               seasonName: 'Tabaski 2024',
               deadlineDate: deadlineDate,
               enrolledCount: 147,
               totalCapacity: 200,
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             ParticipationCardWidget(
               isEnrolled: _isEnrolled,
               onEnrollmentToggle: _handleEnrollmentToggle,
               onPayment: _handlePayment,
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             GiftPackageCarouselWidget(
               giftPackages: _giftPackages,
               onPackageSelect: _handlePackageSelect,
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             EnrollmentProgressWidget(
               currentEnrollment: 147,
               targetEnrollment: 200,
               recentParticipants: _recentParticipants,
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             PickupSchedulingWidget(
               availableSlots: _availableSlots,
               onSlotSelect: _handleSlotSelect,
             ),
-            SizedBox(height: 4.h),
+            SizedBox(height: 4),
           ],
         ),
       ),
@@ -549,7 +562,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                               CustomIconWidget(
                                 iconName: 'check_circle',
                                 color: Colors.green,
-                                size: 6.w,
+                                size: 25,
                               ),
                               SizedBox(width: 2.w),
                               Text(
@@ -569,7 +582,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                                 'Votre participation à la Fête Tabaski 2024 est confirmée!',
                                 style: AppTheme.lightTheme.textTheme.bodyMedium,
                               ),
-                              SizedBox(height: 2.h),
+                              SizedBox(height: 2),
                               Container(
                                 width: double.infinity,
                                 padding: EdgeInsets.all(3.w),
@@ -591,7 +604,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                                         color: Colors.green.shade700,
                                       ),
                                     ),
-                                    SizedBox(height: 1.h),
+                                    SizedBox(height: 1),
                                     Text(
                                       '• Package: ${_selectedGiftPackage!["name"]}',
                                       style: AppTheme
@@ -644,7 +657,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 2.h),
+                    padding: EdgeInsets.symmetric(vertical: 2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(3.w),
                     ),
@@ -655,7 +668,7 @@ class _SeasonalFTeModuleScreenState extends State<SeasonalFTeModuleScreen> {
                       CustomIconWidget(
                         iconName: 'celebration',
                         color: Colors.white,
-                        size: 5.w,
+                        size: 20,
                       ),
                       SizedBox(width: 2.w),
                       Text(

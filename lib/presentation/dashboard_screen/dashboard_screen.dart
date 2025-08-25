@@ -1,420 +1,509 @@
+// lib/presentation/dashboard_screen/dashboard_screen.dart
+// MODIFICATION COMPLÈTE pour intégrer la TabBar dans le side menu
+
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import '../../theme/app_theme.dart';
+import '../../widgets/custom_icon_widget.dart';
+import '../../widgets/tontine_main_drawer.dart';
 
-import '../../core/app_export.dart';
-import './widgets/group_statistics_widget.dart';
-import './widgets/notification_center_widget.dart';
-import './widgets/payment_status_widget.dart';
-import './widgets/quick_actions_widget.dart';
-import './widgets/tontine_progress_widget.dart';
-import './widgets/user_greeting_widget.dart';
-
-class DashboardScreen extends StatefulWidget {
+class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
   @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen>
-    with TickerProviderStateMixin {
-  late TabController _tabController;
-  bool _isRefreshing = false;
-
-  // Mock user data
-  final Map<String, dynamic> _userData = {
-    "name": "Marie Kouassi",
-    "profileImage":
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "currentPosition": 7,
-    "groupName": "Groupe Espoir",
-  };
-
-  // Mock tontine progress data
-  final List<Map<String, dynamic>> _memberProgress = [
-    {"position": 1, "name": "Aminata", "isPaid": true},
-    {"position": 2, "name": "Fatou", "isPaid": true},
-    {"position": 3, "name": "Koffi", "isPaid": true},
-    {"position": 4, "name": "Adjoa", "isPaid": true},
-    {"position": 5, "name": "Yao", "isPaid": true},
-    {"position": 6, "name": "Akissi", "isPaid": false},
-    {"position": 7, "name": "Marie", "isPaid": false},
-    {"position": 8, "name": "Konan", "isPaid": false},
-    {"position": 9, "name": "Aya", "isPaid": false},
-    {"position": 10, "name": "Brou", "isPaid": false},
-    {"position": 11, "name": "Adjoua", "isPaid": false},
-    {"position": 12, "name": "Kouame", "isPaid": false},
-    {"position": 13, "name": "Affoue", "isPaid": false},
-    {"position": 14, "name": "Didier", "isPaid": false},
-    {"position": 15, "name": "Mariam", "isPaid": false},
-    {"position": 16, "name": "Sekou", "isPaid": false},
-    {"position": 17, "name": "Aissata", "isPaid": false},
-    {"position": 18, "name": "Ibrahim", "isPaid": false},
-    {"position": 19, "name": "Fatoumata", "isPaid": false},
-    {"position": 20, "name": "Moussa", "isPaid": false},
-  ];
-
-  // Mock payment data
-  final Map<String, dynamic> _paymentData = {
-    "nextPaymentDate": DateTime.now().add(const Duration(days: 3)),
-    "paymentAmount": 5500.0,
-    "daysRemaining": 3,
-    "isOverdue": false,
-    "paymentStatus": "pending",
-  };
-
-  // Mock statistics data
-  final Map<String, dynamic> _statisticsData = {
-    "totalContributions": 275000.0,
-    "remainingCycles": 15,
-    "participationRate": 85.5,
-  };
-
-  // Mock monthly data for chart
-  final List<Map<String, dynamic>> _monthlyData = [
-    {"month": "Jan", "amount": 45000.0},
-    {"month": "Fév", "amount": 52000.0},
-    {"month": "Mar", "amount": 48000.0},
-    {"month": "Avr", "amount": 55000.0},
-    {"month": "Mai", "amount": 50000.0},
-    {"month": "Jun", "amount": 58000.0},
-  ];
-
-  // Mock notifications data
-  final List<Map<String, dynamic>> _notifications = [
-    {
-      "type": "payment",
-      "title": "Paiement confirmé",
-      "message": "Votre paiement de 5 500 FCFA a été confirmé avec succès.",
-      "timestamp": DateTime.now().subtract(const Duration(hours: 2)),
-      "isRead": false,
-    },
-    {
-      "type": "info",
-      "title": "Nouveau bénéficiaire",
-      "message": "Akissi sera la prochaine bénéficiaire du cycle.",
-      "timestamp": DateTime.now().subtract(const Duration(hours: 5)),
-      "isRead": false,
-    },
-    {
-      "type": "warning",
-      "title": "Rappel de paiement",
-      "message": "N'oubliez pas votre paiement dans 3 jours.",
-      "timestamp": DateTime.now().subtract(const Duration(days: 1)),
-      "isRead": true,
-    },
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 4, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _handleRefresh() async {
-    setState(() {
-      _isRefreshing = true;
-    });
-
-    // Simulate API call delay
-    await Future.delayed(const Duration(seconds: 2));
-
-    setState(() {
-      _isRefreshing = false;
-    });
-  }
-
-  void _handleMakePayment() {
-    // Navigate to payment screen or show payment dialog
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('Redirection vers le paiement...'),
-        backgroundColor: AppTheme.lightTheme.primaryColor,
-      ),
-    );
-  }
-
-  void _handleViewHistory() {
-    // Navigate to payment history screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('Affichage de l\'historique...'),
-        backgroundColor: AppTheme.getSuccessColor(true),
-      ),
-    );
-  }
-
-  void _handleContactSupport() {
-    // Navigate to support screen or open chat
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('Ouverture du support client...'),
-        backgroundColor: AppTheme.getWarningColor(true),
-      ),
-    );
-  }
-
-  void _handleReferFriends() {
-    // Navigate to referral screen
-    Navigator.pushNamed(context, '/referral-system-screen');
-  }
-
-  void _handleViewAllNotifications() {
-    // Navigate to notifications screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Text('Affichage de toutes les notifications...'),
-        backgroundColor: AppTheme.lightTheme.primaryColor,
-      ),
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final userProfile = {
+      'name': 'Marie Kouassi',
+      'id': 'TN-001',
+      'avatar': 'https://via.placeholder.com/150',
+      'status': 'active',
+    };
+
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      
+      drawer: TontineMainDrawer(
+        userProfile: userProfile,
+        currentSelectedIndex: 0, // Dashboard sélectionné
+      ),
+      
+      // AppBar simplifiée sans TabBar
       appBar: AppBar(
         backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
         elevation: 0,
         title: Text(
-          'Tontine Pro',
-          style: AppTheme.lightTheme.appBarTheme.titleTextStyle,
+          'Tableau de Bord',
+          style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: AppTheme.lightTheme.colorScheme.onSurface,
+          ),
         ),
         actions: [
-          Stack(
-            children: [
-              IconButton(
-                onPressed: _handleViewAllNotifications,
-                icon: CustomIconWidget(
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications-screen');
+            },
+            icon: Stack(
+              children: [
+                CustomIconWidget(
                   iconName: 'notifications',
                   color: AppTheme.lightTheme.colorScheme.onSurface,
-                  size: 24,
+                  size: 6,
                 ),
-              ),
-              if (_notifications.any((n) => !(n['isRead'] as bool? ?? true)))
                 Positioned(
-                  right: 8,
-                  top: 8,
+                  right: 0,
+                  top: 0,
                   child: Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.error,
+                    padding: const EdgeInsets.all(2),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFFF6B6B),
                       shape: BoxShape.circle,
+                    ),
+                    child: Text(
+                      '3',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 8,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
+              ],
+            ),
+          ),
+        ],
+        // SUPPRESSION de la propriété bottom: TabBar
+      ),
+      
+      // Contenu principal du Dashboard (remplace le TabBarView)
+      body: _buildDashboardContent(context),
+      
+      // SUPPRESSION de la bottomNavigationBar
+    );
+  }
+
+  Widget _buildDashboardContent(BuildContext context) {
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(4.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Section de bienvenue
+          _buildWelcomeSection(),
+          
+          SizedBox(height: 3),
+          
+          // Progression du cycle (comme dans votre capture d'écran)
+          _buildProgressionSection(),
+          
+          SizedBox(height: 3),
+          
+          // Statistiques rapides
+          _buildQuickStatsSection(),
+          
+          SizedBox(height: 3),
+          
+          // Activités récentes
+          _buildRecentActivitiesSection(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildWelcomeSection() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(4.w),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF6B73FF),
+            const Color(0xFF6B73FF).withValues(alpha: 0.8),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 8,
+            backgroundColor: Colors.white,
+            backgroundImage: const NetworkImage('https://via.placeholder.com/150'),
+          ),
+          
+          SizedBox(width: 4.w),
+          
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Bonjour, Marie Kouassi',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                
+                SizedBox(height: 0.5),
+                
+                Text(
+                  'Position 2 - Groupe Espoir',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white.withValues(alpha: 0.9),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          
+          Container(
+            padding: EdgeInsets.all(2.w),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: CustomIconWidget(
+              iconName: 'trending_up',
+              size: 24,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProgressionSection() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(4.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Progression du Cycle',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          
+          SizedBox(height: 3),
+          
+          // Barre de progression
+          Container(
+            width: double.infinity,
+            height: 8,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: FractionallySizedBox(
+              alignment: Alignment.centerLeft,
+              widthFactor: 0.65, // 65% de progression
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF51CF66),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+            ),
+          ),
+          
+          SizedBox(height: 2),
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '13/20 membres ont payé',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.grey[600],
+                ),
+              ),
+              
+              Text(
+                '65% complété',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xFF51CF66),
+                ),
+              ),
             ],
           ),
-          SizedBox(width: 2.w),
-        ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const [
-            Tab(text: 'Tableau de bord'),
-            Tab(text: 'Paiements'),
-            Tab(text: 'Groupes'),
-            Tab(text: 'Profil'),
-          ],
-        ),
-      ),
-      body: SafeArea(
-        child: TabBarView(
-          controller: _tabController,
-          children: [
-            _buildDashboardTab(),
-            _buildPaymentsTab(),
-            _buildGroupsTab(),
-            _buildProfileTab(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildDashboardTab() {
-    return RefreshIndicator(
-      onRefresh: _handleRefresh,
-      color: AppTheme.lightTheme.primaryColor,
-      child: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: EdgeInsets.all(4.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UserGreetingWidget(
-              userName: _userData['name'] as String,
-              profileImageUrl: _userData['profileImage'] as String,
-              currentPosition: _userData['currentPosition'] as int,
-              groupName: _userData['groupName'] as String,
-            ),
-            SizedBox(height: 2.h),
-            TontineProgressWidget(
-              currentCycle: 5,
-              totalCycles: 20,
-              currentBeneficiary: 6,
-              beneficiaryName: 'Akissi',
-              memberProgress: _memberProgress,
-            ),
-            SizedBox(height: 2.h),
-            PaymentStatusWidget(
-              nextPaymentDate: _paymentData['nextPaymentDate'] as DateTime,
-              paymentAmount: _paymentData['paymentAmount'] as double,
-              daysRemaining: _paymentData['daysRemaining'] as int,
-              isOverdue: _paymentData['isOverdue'] as bool,
-              paymentStatus: _paymentData['paymentStatus'] as String,
-            ),
-            SizedBox(height: 2.h),
-            GroupStatisticsWidget(
-              totalContributions:
-                  _statisticsData['totalContributions'] as double,
-              remainingCycles: _statisticsData['remainingCycles'] as int,
-              participationRate: _statisticsData['participationRate'] as double,
-              monthlyData: _monthlyData,
-            ),
-            SizedBox(height: 2.h),
-            QuickActionsWidget(
-              onMakePayment: _handleMakePayment,
-              onViewHistory: _handleViewHistory,
-              onContactSupport: _handleContactSupport,
-              onReferFriends: _handleReferFriends,
-            ),
-            SizedBox(height: 2.h),
-            NotificationCenterWidget(
-              notifications: _notifications,
-              onViewAll: _handleViewAllNotifications,
-            ),
-            SizedBox(height: 2.h),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildPaymentsTab() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomIconWidget(
-            iconName: 'payment',
-            color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            size: 64,
-          ),
-          SizedBox(height: 2.h),
-          Text(
-            'Section Paiements',
-            style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            ),
-          ),
-          SizedBox(height: 1.h),
-          Text(
-            'Gérez vos paiements et consultez votre historique',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            ),
-            textAlign: TextAlign.center,
-          ),
         ],
       ),
     );
   }
 
-  Widget _buildGroupsTab() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomIconWidget(
-            iconName: 'groups',
-            color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            size: 64,
+  Widget _buildQuickStatsSection() {
+    return Row(
+      children: [
+        Expanded(
+          child: _buildStatCard(
+            title: 'Montant Collecté',
+            value: '715 000',
+            suffix: 'FCFA',
+            icon: 'account_balance_wallet',
+            color: const Color(0xFF51CF66),
           ),
-          SizedBox(height: 2.h),
-          Text(
-            'Gestion des Groupes',
-            style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            ),
+        ),
+        
+        SizedBox(width: 3.w),
+        
+        Expanded(
+          child: _buildStatCard(
+            title: 'Prochain Tour',
+            value: '8',
+            suffix: 'jours',
+            icon: 'schedule',
+            color: const Color(0xFFFFD43B),
           ),
-          SizedBox(height: 1.h),
-          Text(
-            'Consultez et gérez vos groupes de tontine',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 2.h),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/group-management-screen');
-            },
-            child: const Text('Gérer les Groupes'),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
-  Widget _buildProfileTab() {
-    return Center(
+  Widget _buildStatCard({
+    required String title,
+    required String value,
+    String? suffix,
+    required String icon,
+    required Color color,
+  }) {
+    return Container(
+      padding: EdgeInsets.all(4.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 20.w,
-            height: 20.w,
+            padding: EdgeInsets.all(2.w),
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: AppTheme.lightTheme.primaryColor,
-                width: 3,
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: CustomIconWidget(
+              iconName: icon,
+              size: 20,
+              color: color,
+            ),
+          ),
+          
+          SizedBox(height: 2),
+          
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              Text(
+                value,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
+              if (suffix != null) ...[
+                SizedBox(width: 1.w),
+                Text(
+                  suffix,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ],
+            ],
+          ),
+          
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 11,
+              color: Colors.grey[600],
             ),
-            child: ClipOval(
-              child: CustomImageWidget(
-                imageUrl: _userData['profileImage'] as String,
-                width: 20.w,
-                height: 20.w,
-                fit: BoxFit.cover,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRecentActivitiesSection() {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(4.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Activités Récentes',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
+              
+              TextButton(
+                onPressed: () {
+                  // Navigation vers historique complet
+                },
+                child: Text(
+                  'Voir tout',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: const Color(0xFF6B73FF),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          
+          SizedBox(height: 2),
+          
+          Column(
+            children: [
+              _buildActivityItem(
+                title: 'Paiement reçu',
+                subtitle: 'Koffi Adjoa - 55 000 FCFA',
+                time: 'Il y a 2h',
+                icon: 'payment',
+                color: const Color(0xFF51CF66),
+              ),
+              
+              _buildActivityItem(
+                title: 'Nouveau cycle démarré',
+                subtitle: 'Cycle 4 - 20 participants',
+                time: 'Il y a 1 jour',
+                icon: 'refresh',
+                color: const Color(0xFF6B73FF),
+              ),
+              
+              _buildActivityItem(
+                title: 'Rappel envoyé',
+                subtitle: '3 membres en attente',
+                time: 'Il y a 2 jours',
+                icon: 'notifications',
+                color: const Color(0xFFFFD43B),
+                isLast: true,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildActivityItem({
+    required String title,
+    required String subtitle,
+    required String time,
+    required String icon,
+    required Color color,
+    bool isLast = false,
+  }) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 2),
+      decoration: BoxDecoration(
+        border: isLast ? null : Border(
+          bottom: BorderSide(
+            color: Colors.grey[200]!,
+            width: 1,
+          ),
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: EdgeInsets.all(2.w),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: CustomIconWidget(
+              iconName: icon,
+              size: 20,
+              color: color,
             ),
           ),
-          SizedBox(height: 2.h),
+          
+          SizedBox(width: 4.w),
+          
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
+                  ),
+                ),
+                
+                Text(
+                  subtitle,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          
           Text(
-            _userData['name'] as String,
-            style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.w600,
+            time,
+            style: TextStyle(
+              fontSize: 10,
+              color: Colors.grey[500],
             ),
-          ),
-          SizedBox(height: 1.h),
-          Text(
-            'Position ${_userData['currentPosition']} • ${_userData['groupName']}',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            ),
-          ),
-          SizedBox(height: 3.h),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/identity-verification-screen');
-            },
-            child: const Text('Vérification d\'Identité'),
-          ),
-          SizedBox(height: 1.h),
-          OutlinedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/seasonal-f-te-module-screen');
-            },
-            child: const Text('Module Fête Saisonnière'),
           ),
         ],
       ),

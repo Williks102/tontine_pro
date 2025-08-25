@@ -156,7 +156,7 @@ class _PhotoVerificationWidgetState extends State<PhotoVerificationWidget> {
       ),
       child: Container(
         width: 60.w,
-        height: 30.h,
+        height: 30,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
           color: Colors.transparent,
@@ -184,7 +184,7 @@ class _PhotoVerificationWidgetState extends State<PhotoVerificationWidget> {
   Widget _buildCameraPreview() {
     if (_errorMessage != null) {
       return Container(
-        height: 40.h,
+        height: 40,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -218,7 +218,7 @@ class _PhotoVerificationWidgetState extends State<PhotoVerificationWidget> {
 
     if (!_isCameraInitialized || _cameraController == null) {
       return Container(
-        height: 40.h,
+        height: 40,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -232,7 +232,7 @@ class _PhotoVerificationWidgetState extends State<PhotoVerificationWidget> {
     }
 
     return Container(
-      height: 40.h,
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -280,7 +280,7 @@ class _PhotoVerificationWidgetState extends State<PhotoVerificationWidget> {
 
   Widget _buildComparisonView() {
     return Container(
-      height: 40.h,
+      height: 40,
       child: Row(
         children: [
           Expanded(

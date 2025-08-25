@@ -43,7 +43,7 @@ class GroupStatisticsWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Row(
             children: [
               Expanded(
@@ -65,7 +65,7 @@ class GroupStatisticsWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
@@ -98,7 +98,7 @@ class GroupStatisticsWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 1.h),
+                SizedBox(height: 1),
                 Container(
                   width: double.infinity,
                   height: 8,
@@ -121,17 +121,17 @@ class GroupStatisticsWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Text(
             'Évolution Mensuelle',
             style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           Container(
             width: double.infinity,
-            height: 20.h,
+            height: 20,
             child: Semantics(
               label: "Graphique d'évolution mensuelle des contributions",
               child: LineChart(
@@ -233,14 +233,14 @@ class GroupStatisticsWidget extends StatelessWidget {
               size: 20,
             ),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           Text(
             title,
             style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
               color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
             ),
           ),
-          SizedBox(height: 0.5.h),
+          SizedBox(height: 0.5),
           Text(
             value,
             style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(

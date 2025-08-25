@@ -25,8 +25,8 @@ class TermsAndReferralSection extends StatelessWidget {
       builder: (context) => Dialog(
         child: Container(
           constraints: BoxConstraints(
-            maxHeight: 80.h,
-            maxWidth: 90.w,
+            maxHeight: 80,
+            maxWidth: 90,
           ),
           child: Column(
             children: [
@@ -56,7 +56,7 @@ class TermsAndReferralSection extends StatelessWidget {
                       icon: CustomIconWidget(
                         iconName: 'close',
                         color: Colors.white,
-                        size: 5.w,
+                        size: 5,
                       ),
                     ),
                   ],
@@ -132,14 +132,14 @@ class TermsAndReferralSection extends StatelessWidget {
             color: AppTheme.lightTheme.colorScheme.primary,
           ),
         ),
-        SizedBox(height: 1.h),
+        SizedBox(height: 1),
         Text(
           content,
           style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
             height: 1.4,
           ),
         ),
-        SizedBox(height: 2.h),
+        SizedBox(height: 2),
       ],
     );
   }
@@ -165,7 +165,7 @@ class TermsAndReferralSection extends StatelessWidget {
               color: AppTheme.lightTheme.colorScheme.primary,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
 
           // Terms and Conditions
           Container(
@@ -218,7 +218,7 @@ class TermsAndReferralSection extends StatelessWidget {
                 if (!acceptedTerms)
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(top: 1.h),
+                    padding: EdgeInsets.only(top: 1),
                     child: Text(
                       'Vous devez accepter les conditions pour continuer',
                       style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
@@ -231,7 +231,7 @@ class TermsAndReferralSection extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
 
           // Referral Code Section
           Container(
@@ -253,7 +253,7 @@ class TermsAndReferralSection extends StatelessWidget {
                     CustomIconWidget(
                       iconName: 'card_giftcard',
                       color: AppTheme.lightTheme.colorScheme.secondary,
-                      size: 5.w,
+                      size: 5,
                     ),
                     SizedBox(width: 2.w),
                     Text(
@@ -265,7 +265,7 @@ class TermsAndReferralSection extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 2),
                 TextFormField(
                   controller: referralCodeController,
                   onChanged: onReferralCodeChanged,
@@ -278,7 +278,7 @@ class TermsAndReferralSection extends StatelessWidget {
                       child: CustomIconWidget(
                         iconName: 'confirmation_number',
                         color: AppTheme.lightTheme.colorScheme.secondary,
-                        size: 5.w,
+                        size: 5,
                       ),
                     ),
                     suffixIcon: referralCodeController.text.isNotEmpty
@@ -291,14 +291,14 @@ class TermsAndReferralSection extends StatelessWidget {
                               iconName: 'clear',
                               color: AppTheme
                                   .lightTheme.colorScheme.onSurfaceVariant,
-                              size: 5.w,
+                              size: 5,
                             ),
                           )
                         : null,
                   ),
                   textCapitalization: TextCapitalization.characters,
                 ),
-                SizedBox(height: 1.h),
+                SizedBox(height: 1),
                 Container(
                   padding: EdgeInsets.all(2.w),
                   decoration: BoxDecoration(
@@ -311,7 +311,7 @@ class TermsAndReferralSection extends StatelessWidget {
                       CustomIconWidget(
                         iconName: 'info',
                         color: AppTheme.lightTheme.colorScheme.secondary,
-                        size: 4.w,
+                        size: 4,
                       ),
                       SizedBox(width: 2.w),
                       Expanded(

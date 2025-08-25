@@ -31,7 +31,7 @@ class _NotificationSettingsCardState extends State<NotificationSettingsCard> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
@@ -63,7 +63,7 @@ class _NotificationSettingsCardState extends State<NotificationSettingsCard> {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           _buildNotificationItem(
             'Rappels de Paiement',
             'paymentReminders',
@@ -106,7 +106,7 @@ class _NotificationSettingsCardState extends State<NotificationSettingsCard> {
     String iconName,
   ) {
     return Container(
-      margin: EdgeInsets.only(bottom: 2.h),
+      margin: EdgeInsets.only(bottom: 2),
       child: Row(
         children: [
           Container(

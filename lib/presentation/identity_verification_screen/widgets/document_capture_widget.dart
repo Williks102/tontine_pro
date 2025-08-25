@@ -172,7 +172,7 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
   Widget _buildCameraPreview() {
     if (_isLoading) {
       return Container(
-        height: 50.h,
+        height: 50,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -197,7 +197,7 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
 
     if (_errorMessage != null) {
       return Container(
-        height: 50.h,
+        height: 50,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -236,7 +236,7 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
 
     if (!_isCameraInitialized || _cameraController == null) {
       return Container(
-        height: 50.h,
+        height: 50,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -251,7 +251,7 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
     }
 
     return Container(
-      height: 50.h,
+      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -273,8 +273,8 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
               ),
               child: Center(
                 child: Container(
-                  width: 70.w,
-                  height: 25.h,
+                  width: 70,
+                  height: 25,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: AppTheme.lightTheme.primaryColor,
@@ -299,8 +299,8 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
           // Flash toggle (mobile only)
           if (!kIsWeb)
             Positioned(
-              top: 2.h,
-              right: 4.w,
+              top: 2,
+              right: 4,
               child: GestureDetector(
                 onTap: _toggleFlash,
                 child: Container(
@@ -324,7 +324,7 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
 
   Widget _buildCapturedImagePreview() {
     return Container(
-      height: 50.h,
+      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -343,8 +343,8 @@ class _DocumentCaptureWidgetState extends State<DocumentCaptureWidget> {
                   ),
           ),
           Positioned(
-            top: 2.h,
-            right: 4.w,
+            top: 2,
+            right: 4,
             child: Container(
               padding: EdgeInsets.all(1.w),
               decoration: BoxDecoration(

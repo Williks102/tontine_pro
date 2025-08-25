@@ -48,7 +48,7 @@ class TontineProgressWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.5.h),
+                padding: EdgeInsets.symmetric(horizontal: 3, vertical: 0.5),
                 decoration: BoxDecoration(
                   color: AppTheme.getSuccessColor(true).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
@@ -63,7 +63,7 @@ class TontineProgressWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
@@ -109,21 +109,21 @@ class TontineProgressWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Text(
             'Progression des Membres',
             style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           SizedBox(
-            height: 25.h,
+            height: 25,
             child: ListView.builder(
               itemCount: (memberProgress.length / 4).ceil(),
               itemBuilder: (context, rowIndex) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 1.h),
+                  padding: EdgeInsets.only(bottom: 1),
                   child: Row(
                     children: List.generate(4, (colIndex) {
                       final memberIndex = rowIndex * 4 + colIndex;
@@ -142,8 +142,8 @@ class TontineProgressWidget extends StatelessWidget {
                           child: Column(
                             children: [
                               Container(
-                                width: 12.w,
-                                height: 12.w,
+                                width: 12,
+                                height: 12,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: isCurrent
@@ -183,7 +183,7 @@ class TontineProgressWidget extends StatelessWidget {
                                             ),
                                 ),
                               ),
-                              SizedBox(height: 0.5.h),
+                              SizedBox(height: 0.5),
                               Text(
                                 member['name'] as String,
                                 style: AppTheme.lightTheme.textTheme.labelSmall

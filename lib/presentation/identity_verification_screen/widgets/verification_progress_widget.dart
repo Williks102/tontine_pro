@@ -92,8 +92,8 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
     }
 
     return Container(
-      width: 12.w,
-      height: 12.w,
+      width: 12,
+      height: 12,
       decoration: BoxDecoration(
         color: backgroundColor,
         shape: BoxShape.circle,
@@ -180,7 +180,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
 
           // Progress bar
           Column(
@@ -203,7 +203,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
                   ),
                 ],
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               AnimatedBuilder(
                 animation: _progressAnimation,
                 builder: (context, child) {
@@ -224,7 +224,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
             ],
           ),
 
-          SizedBox(height: 4.h),
+          SizedBox(height: 4),
 
           // Step indicators
           Row(
@@ -236,7 +236,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
             }).expand((element) => element).toList(),
           ),
 
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
 
           // Current step title
           if (widget.currentStep < widget.stepTitles.length) ...[
@@ -262,7 +262,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 0.5.h),
+                  SizedBox(height: 0.5),
                   Text(
                     widget.stepTitles[widget.currentStep],
                     style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
@@ -277,7 +277,7 @@ class _VerificationProgressWidgetState extends State<VerificationProgressWidget>
 
           // Completed steps summary
           if (widget.currentStep > 0) ...[
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(3.w),

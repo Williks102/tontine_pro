@@ -15,9 +15,9 @@ class CustomImageWidget extends StatelessWidget {
     Key? key,
     required this.imageUrl,
     this.width = 60,
-    this.height = 60,
+    thiseight = 60,
     this.fit = BoxFit.cover,
-    this.errorWidget,
+    this.errorWidget, required this.height,
   }) : super(key: key);
 
   @override

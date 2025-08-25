@@ -33,7 +33,7 @@ class _ParticipationCardWidgetState extends State<ParticipationCardWidget> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 1.h),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3.w),
       ),
@@ -47,7 +47,7 @@ class _ParticipationCardWidgetState extends State<ParticipationCardWidget> {
                 CustomIconWidget(
                   iconName: 'card_giftcard',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 6.w,
+                  size: 6,
                 ),
                 SizedBox(width: 3.w),
                 Expanded(
@@ -108,7 +108,7 @@ class _ParticipationCardWidgetState extends State<ParticipationCardWidget> {
                   CustomIconWidget(
                     iconName: 'info',
                     color: Colors.amber.shade700,
-                    size: 5.w,
+                    size: 5,
                   ),
                   SizedBox(width: 2.w),
                   Expanded(
@@ -174,7 +174,7 @@ class _ParticipationCardWidgetState extends State<ParticipationCardWidget> {
                       color: _isVoluntaryParticipation
                           ? Colors.white
                           : Colors.grey.shade600,
-                      size: 5.w,
+                      size: 5,
                     ),
                     SizedBox(width: 2.w),
                     Text(

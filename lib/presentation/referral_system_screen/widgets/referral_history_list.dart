@@ -97,7 +97,7 @@ class ReferralHistoryList extends StatelessWidget {
               CustomIconWidget(
                 iconName: 'history',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 6,
               ),
               SizedBox(width: 3.w),
               Expanded(
@@ -112,12 +112,12 @@ class ReferralHistoryList extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: referralHistory.length,
-            separatorBuilder: (context, index) => SizedBox(height: 2.h),
+            separatorBuilder: (context, index) => SizedBox(height: 2),
             itemBuilder: (context, index) {
               final referral = referralHistory[index];
               return _buildReferralHistoryItem(referral);
@@ -177,8 +177,8 @@ class ReferralHistoryList extends StatelessWidget {
             borderRadius: BorderRadius.circular(25),
             child: CustomImageWidget(
               imageUrl: referral["avatar"] as String,
-              width: 12.w,
-              height: 12.w,
+              width: 12,
+              height: 12,
               fit: BoxFit.cover,
             ),
           ),
@@ -197,7 +197,7 @@ class ReferralHistoryList extends StatelessWidget {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 0.5.h),
+                SizedBox(height: 0.5),
                 Text(
                   referral["email"] as String,
                   style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
@@ -205,12 +205,12 @@ class ReferralHistoryList extends StatelessWidget {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 1.h),
+                SizedBox(height: 1),
                 Row(
                   children: [
                     Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 2.w, vertical: 0.5.h),
+                          horizontal: 2, vertical: 0.5),
                       decoration: BoxDecoration(
                         color: type == 'internal'
                             ? AppTheme.lightTheme.colorScheme.primaryContainer
@@ -235,7 +235,7 @@ class ReferralHistoryList extends StatelessWidget {
                     CustomIconWidget(
                       iconName: statusIcon.codePoint.toString(),
                       color: statusColor,
-                      size: 3.w,
+                      size: 3,
                     ),
                     SizedBox(width: 1.w),
                     Expanded(
@@ -268,7 +268,7 @@ class ReferralHistoryList extends StatelessWidget {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 0.5.h),
+                SizedBox(height: 0.5),
                 Text(
                   "Commission",
                   style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(

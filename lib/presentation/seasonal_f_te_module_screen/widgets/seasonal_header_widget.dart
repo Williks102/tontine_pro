@@ -45,7 +45,7 @@ class SeasonalHeaderWidget extends StatelessWidget {
               CustomIconWidget(
                 iconName: 'celebration',
                 color: Colors.white,
-                size: 8.w,
+                size: 8,
               ),
               SizedBox(width: 3.w),
               Expanded(
@@ -59,9 +59,9 @@ class SeasonalHeaderWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 1),
             decoration: BoxDecoration(
               color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(2.w),
@@ -71,7 +71,7 @@ class SeasonalHeaderWidget extends StatelessWidget {
                 CustomIconWidget(
                   iconName: 'timer',
                   color: Colors.white,
-                  size: 5.w,
+                  size: 5,
                 ),
                 SizedBox(width: 2.w),
                 Expanded(
@@ -101,7 +101,7 @@ class SeasonalHeaderWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Row(
             children: [
               Expanded(
@@ -125,8 +125,8 @@ class SeasonalHeaderWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 15.w,
-                height: 15.w,
+                width: 15,
+                height: 15,
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.2),
                   shape: BoxShape.circle,

@@ -56,7 +56,7 @@ class _CommissionCalculatorCardState extends State<CommissionCalculatorCard> {
               CustomIconWidget(
                 iconName: 'calculate',
                 color: AppTheme.lightTheme.colorScheme.secondary,
-                size: 6.w,
+                size: 6,
               ),
               SizedBox(width: 3.w),
               Expanded(
@@ -89,7 +89,7 @@ class _CommissionCalculatorCardState extends State<CommissionCalculatorCard> {
                   ),
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+                        EdgeInsets.symmetric(horizontal: 2, vertical: 1.h),
                     decoration: BoxDecoration(
                       color: AppTheme.lightTheme.colorScheme.primaryContainer,
                       borderRadius: BorderRadius.circular(6),
@@ -155,7 +155,7 @@ class _CommissionCalculatorCardState extends State<CommissionCalculatorCard> {
                   ),
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+                        EdgeInsets.symmetric(horizontal: 2, vertical: 1.h),
                     decoration: BoxDecoration(
                       color: AppTheme.lightTheme.colorScheme.secondaryContainer,
                       borderRadius: BorderRadius.circular(6),

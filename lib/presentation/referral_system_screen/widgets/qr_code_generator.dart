@@ -52,7 +52,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
               CustomIconWidget(
                 iconName: 'qr_code',
                 color: AppTheme.lightTheme.colorScheme.secondary,
-                size: 6.w,
+                size: 6,
               ),
               SizedBox(width: 3.w),
               Expanded(
@@ -67,19 +67,19 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Text(
             "Partagez votre code de parrainage en personne avec un code QR",
             style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
               color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           if (_isQrVisible) ...[
             Center(
               child: Container(
-                width: 50.w,
-                height: 50.w,
+                width: 50,
+                height: 50,
                 padding: EdgeInsets.all(4.w),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -95,8 +95,8 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                   children: [
                     // QR Code placeholder - In real implementation, use qr_flutter package
                     Container(
-                      width: 35.w,
-                      height: 35.w,
+                      width: 35,
+                      height: 35,
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(4),
@@ -105,11 +105,11 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                         child: CustomIconWidget(
                           iconName: 'qr_code_2',
                           color: Colors.white,
-                          size: 20.w,
+                          size: 20,
                         ),
                       ),
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 2),
                     Text(
                       widget.referralCode,
                       style:
@@ -123,7 +123,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                 ),
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Row(
               children: [
                 Expanded(
@@ -132,7 +132,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     icon: CustomIconWidget(
                       iconName: 'visibility_off',
                       color: AppTheme.lightTheme.colorScheme.primary,
-                      size: 4.w,
+                      size: 4,
                     ),
                     label: Text(
                       "Masquer QR",
@@ -159,7 +159,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     icon: CustomIconWidget(
                       iconName: 'download',
                       color: AppTheme.lightTheme.colorScheme.onPrimary,
-                      size: 4.w,
+                      size: 4,
                     ),
                     label: Text(
                       "Sauvegarder",
@@ -178,7 +178,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                 icon: CustomIconWidget(
                   iconName: 'qr_code_scanner',
                   color: AppTheme.lightTheme.colorScheme.onPrimary,
-                  size: 5.w,
+                  size: 5,
                 ),
                 label: Text(
                   "Générer le code QR",
@@ -187,7 +187,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                 ),
               ),
             ),

@@ -47,7 +47,7 @@ class NotificationCenterWidget extends StatelessWidget {
                     SizedBox(width: 2.w),
                     Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 2.w, vertical: 0.5.h),
+                          horizontal: 2, vertical: 0.5),
                       decoration: BoxDecoration(
                         color: AppTheme.lightTheme.colorScheme.error,
                         borderRadius: BorderRadius.circular(10),
@@ -76,7 +76,7 @@ class NotificationCenterWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           notifications.isEmpty
               ? Container(
                   width: double.infinity,
@@ -93,7 +93,7 @@ class NotificationCenterWidget extends StatelessWidget {
                         color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
                         size: 32,
                       ),
-                      SizedBox(height: 1.h),
+                      SizedBox(height: 1),
                       Text(
                         'Aucune notification',
                         style:
@@ -149,7 +149,7 @@ class NotificationCenterWidget extends StatelessWidget {
     }
 
     return Container(
-      margin: EdgeInsets.only(bottom: 1.h),
+      margin: EdgeInsets.only(bottom: 1),
       padding: EdgeInsets.all(3.w),
       decoration: BoxDecoration(
         color: isRead
@@ -205,7 +205,7 @@ class NotificationCenterWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 0.5.h),
+                SizedBox(height: 0.5),
                 Text(
                   message,
                   style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(

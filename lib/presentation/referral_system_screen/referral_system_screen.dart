@@ -93,7 +93,7 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
           icon: CustomIconWidget(
             iconName: 'arrow_back',
             color: AppTheme.lightTheme.colorScheme.onSurface,
-            size: 6.w,
+            size: 6,
           ),
         ),
         title: Text(
@@ -111,7 +111,7 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
             icon: CustomIconWidget(
               iconName: 'dashboard',
               color: AppTheme.lightTheme.colorScheme.onSurface,
-              size: 6.w,
+              size: 6,
             ),
           ),
         ],
@@ -169,7 +169,7 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
                     CustomIconWidget(
                       iconName: 'people',
                       color: AppTheme.lightTheme.colorScheme.onPrimary,
-                      size: 8.w,
+                      size: 8,
                     ),
                     SizedBox(width: 3.w),
                     Expanded(
@@ -288,7 +288,7 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
                       iconName: 'info',
                       color:
                           AppTheme.lightTheme.colorScheme.onTertiaryContainer,
-                      size: 5.w,
+                      size: 5,
                     ),
                     SizedBox(width: 2.w),
                     Text(
@@ -338,8 +338,8 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 1.5.w,
-          height: 1.5.w,
+          width: 1.5,
+          height: 1.5,
           margin: EdgeInsets.only(top: 1.h),
           decoration: BoxDecoration(
             color: AppTheme.lightTheme.colorScheme.onTertiaryContainer,
@@ -401,12 +401,12 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
           icon: CustomIconWidget(
             iconName: 'dashboard',
             color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            size: 6.w,
+            size: 6,
           ),
           activeIcon: CustomIconWidget(
             iconName: 'dashboard',
             color: AppTheme.lightTheme.colorScheme.primary,
-            size: 6.w,
+            size: 6,
           ),
           label: 'Tableau de bord',
         ),
@@ -414,12 +414,12 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
           icon: CustomIconWidget(
             iconName: 'group',
             color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            size: 6.w,
+            size: 6,
           ),
           activeIcon: CustomIconWidget(
             iconName: 'group',
             color: AppTheme.lightTheme.colorScheme.primary,
-            size: 6.w,
+            size: 6,
           ),
           label: 'Groupes',
         ),
@@ -427,12 +427,12 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
           icon: CustomIconWidget(
             iconName: 'celebration',
             color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-            size: 6.w,
+            size: 6,
           ),
           activeIcon: CustomIconWidget(
             iconName: 'celebration',
             color: AppTheme.lightTheme.colorScheme.primary,
-            size: 6.w,
+            size: 6,
           ),
           label: 'Fête',
         ),
@@ -440,12 +440,12 @@ class _ReferralSystemScreenState extends State<ReferralSystemScreen>
           icon: CustomIconWidget(
             iconName: 'people',
             color: AppTheme.lightTheme.colorScheme.primary,
-            size: 6.w,
+            size: 6,
           ),
           activeIcon: CustomIconWidget(
             iconName: 'people',
             color: AppTheme.lightTheme.colorScheme.primary,
-            size: 6.w,
+            size: 6,
           ),
           label: 'Parrainages',
         ),

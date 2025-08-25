@@ -21,7 +21,7 @@ class UserGreetingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
@@ -36,8 +36,8 @@ class UserGreetingWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 15.w,
-            height: 15.w,
+            width: 15,
+            height: 15,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
@@ -48,8 +48,8 @@ class UserGreetingWidget extends StatelessWidget {
             child: ClipOval(
               child: CustomImageWidget(
                 imageUrl: profileImageUrl,
-                width: 15.w,
-                height: 15.w,
+                width: 15,
+                height: 15,
                 fit: BoxFit.cover,
               ),
             ),
@@ -67,7 +67,7 @@ class UserGreetingWidget extends StatelessWidget {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 0.5.h),
+                SizedBox(height: 0.5),
                 Text(
                   'Position $currentPosition • $groupName',
                   style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
@@ -79,7 +79,7 @@ class UserGreetingWidget extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+            padding: EdgeInsets.symmetric(horizontal: 3, vertical: 1),
             decoration: BoxDecoration(
               color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),

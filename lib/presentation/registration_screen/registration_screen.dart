@@ -1,9 +1,12 @@
+// Version avec tous les packages installés
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
+
+// Le reste du code reste identique...
 
 // Couleurs TONTINE PRO
 class TontineColors {
@@ -102,8 +105,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 10.w,
-                  height: 0.5.h,
+                  width: 10,
+                  height: 0.5,
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(2),
@@ -214,7 +217,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                 ],
               ),
             ),
-            Icon(Icons.arrow_forward_ios, size: 4.w, color: Colors.grey[400]),
+            Icon(Icons.arrow_forward_ios, size: 4, color: Colors.grey[400]),
           ],
         ),
       ),
@@ -477,8 +480,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                                 child: GestureDetector(
                                   onTap: _showImageSourceDialog,
                                   child: Container(
-                                    width: 28.w,
-                                    height: 28.w,
+                                    width: 28,
+                                    height: 28,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(
@@ -499,8 +502,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                                       ? ClipOval(
                                           child: Image.file(
                                             _selectedImage!,
-                                            width: 28.w,
-                                            height: 28.w,
+                                            width: 28,
+                                            height: 28,
                                             fit: BoxFit.cover,
                                           ),
                                         )
@@ -511,7 +514,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                                           ),
                                           child: Icon(
                                             Icons.camera_alt,
-                                            size: 8.w,
+                                            size: 8,
                                             color: Colors.grey,
                                           ),
                                         ),
@@ -546,8 +549,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                                       backgroundColor: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       padding: EdgeInsets.symmetric(
-                                        horizontal: 6.w,
-                                        vertical: 2.h,
+                                        horizontal: 6,
+                                        vertical: 2,
                                       ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(25),
@@ -724,7 +727,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
 
                               // Bouton d'inscription
                               Container(
-                                height: 6.h,
+                                height: 6,
                                 decoration: BoxDecoration(
                                   gradient: const LinearGradient(
                                     colors: [
@@ -838,8 +841,8 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               borderSide: const BorderSide(color: Colors.red, width: 2),
             ),
             contentPadding: EdgeInsets.symmetric(
-              horizontal: 4.w,
-              vertical: 2.h,
+              horizontal: 4,
+              vertical: 2,
             ),
             hintStyle: TextStyle(color: Colors.grey[500]),
           ),

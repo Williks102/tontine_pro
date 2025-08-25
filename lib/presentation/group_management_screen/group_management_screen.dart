@@ -6,6 +6,7 @@ import './widgets/group_info_card.dart';
 import './widgets/group_statistics_card.dart';
 import './widgets/member_list_item.dart';
 import './widgets/notification_settings_card.dart';
+import '../../widgets/tontine_main_drawer.dart';
 
 class GroupManagementScreen extends StatefulWidget {
   const GroupManagementScreen({Key? key}) : super(key: key);
@@ -170,8 +171,19 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
 
   @override
   Widget build(BuildContext context) {
+    final userProfile = {
+      'name': 'Marie Kouassi',
+      'id': 'TN-001',
+      'avatar': 'https://via.placeholder.com/150',
+      'status': 'active',
+    };
+
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      drawer: TontineMainDrawer(
+        userProfile: userProfile,
+        currentSelectedIndex: 3, // 2 = Groupes, 3 = Parrainages, etc.
+      ),
       appBar: AppBar(
         title: const Text('Gestion du Groupe'),
         leading: IconButton(
@@ -225,7 +237,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+          margin: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
@@ -311,7 +323,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
             color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
             size: 64,
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Text(
             _searchQuery.isNotEmpty
                 ? 'Aucun membre trouvé'
@@ -320,7 +332,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
                   color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
                 ),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           Text(
             _searchQuery.isNotEmpty
                 ? 'Essayez avec un autre terme de recherche'
@@ -331,7 +343,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
             textAlign: TextAlign.center,
           ),
           if (_searchQuery.isEmpty) ...[
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/referral-system-screen');
@@ -392,19 +404,19 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
           child: Column(
             children: [
               Container(
-                width: 12.w,
-                height: 0.5.h,
+                width: 12,
+                height: 0.5,
                 decoration: BoxDecoration(
                   color: AppTheme.lightTheme.dividerColor,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 3),
               CircleAvatar(
-                radius: 8.w,
+                radius: 8,
                 backgroundImage: NetworkImage(member['avatar'] as String),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 member['name'] as String,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -417,7 +429,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
                       color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
                     ),
               ),
-              SizedBox(height: 3.h),
+              SizedBox(height: 3),
               Expanded(
                 child: ListView(
                   controller: scrollController,
@@ -444,7 +456,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
 
   Widget _buildDetailItem(String label, String value) {
     return Container(
-      margin: EdgeInsets.only(bottom: 2.h),
+      margin: EdgeInsets.only(bottom: 2),
       padding: EdgeInsets.all(3.w),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.primaryContainer,
@@ -544,14 +556,14 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 12.w,
-              height: 0.5.h,
+              width: 12,
+              height: 0.5,
               decoration: BoxDecoration(
                 color: AppTheme.lightTheme.dividerColor,
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             ListTile(
               leading: CustomIconWidget(
                 iconName: 'dashboard',
@@ -588,7 +600,7 @@ class _GroupManagementScreenState extends State<GroupManagementScreen>
                 Navigator.pushNamed(context, '/seasonal-f-te-module-screen');
               },
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
           ],
         ),
       ),

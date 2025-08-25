@@ -192,7 +192,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
   Widget _buildCameraPreview() {
     if (_errorMessage != null) {
       return Container(
-        height: 45.h,
+        height: 45,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -210,7 +210,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                 color: AppTheme.lightTheme.colorScheme.error,
                 size: 48,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 _errorMessage!,
                 style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
@@ -218,7 +218,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               ElevatedButton(
                 onPressed: _initializeCamera,
                 child: Text('Réessayer'),
@@ -231,7 +231,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
 
     if (!_isCameraInitialized || _cameraController == null) {
       return Container(
-        height: 45.h,
+        height: 45,
         decoration: BoxDecoration(
           color: AppTheme.lightTheme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
@@ -243,7 +243,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
               CircularProgressIndicator(
                 color: AppTheme.lightTheme.primaryColor,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Text(
                 'Initialisation de la caméra...',
                 style: AppTheme.lightTheme.textTheme.bodyMedium,
@@ -255,7 +255,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
     }
 
     return Container(
-      height: 45.h,
+      height: 45,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -268,14 +268,14 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
           // Recording indicator
           if (_isRecording)
             Positioned(
-              top: 2.h,
-              left: 4.w,
+              top: 2,
+              left: 4,
               child: AnimatedBuilder(
                 animation: _pulseAnimationController,
                 builder: (context, child) {
                   return Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+                        EdgeInsets.symmetric(horizontal: 3, vertical: 1),
                     decoration: BoxDecoration(
                       color: Colors.red.withValues(
                         alpha: 0.8 + 0.2 * _pulseAnimationController.value,
@@ -333,7 +333,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
 
   Widget _buildVideoPreview() {
     return Container(
-      height: 45.h,
+      height: 45,
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
@@ -351,7 +351,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
               color: AppTheme.getSuccessColor(true),
               size: 64,
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Text(
               'Vidéo enregistrée',
               style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
@@ -359,7 +359,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 1.h),
+            SizedBox(height: 1),
             Text(
               'Durée: ${_formatDuration(_recordingDuration)}',
               style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
@@ -406,18 +406,18 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
               ),
             ],
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           Text(
             'Enregistrez une vidéo de 30 secondes maximum pour confirmer votre acceptation des règles.',
             style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
               color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           _recordedVideoPath == null
               ? _buildCameraPreview()
               : _buildVideoPreview(),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           if (_recordedVideoPath == null) ...[
             SizedBox(
               width: double.infinity,
@@ -437,7 +437,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                   backgroundColor: _isRecording
                       ? Colors.red
                       : AppTheme.lightTheme.primaryColor,
-                  padding: EdgeInsets.symmetric(vertical: 2.h),
+                  padding: EdgeInsets.symmetric(vertical: 2),
                 ),
               ),
             ),
@@ -454,7 +454,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                     ),
                     label: Text('Reprendre'),
                     style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 2.h),
+                      padding: EdgeInsets.symmetric(vertical: 2),
                     ),
                   ),
                 ),
@@ -469,7 +469,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
                     ),
                     label: Text('Valider'),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 2.h),
+                      padding: EdgeInsets.symmetric(vertical: 2),
                     ),
                   ),
                 ),
@@ -477,7 +477,7 @@ class _VideoRecordingWidgetState extends State<VideoRecordingWidget>
             ),
           ],
           if (_isRecording) ...[
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Container(
               padding: EdgeInsets.all(3.w),
               decoration: BoxDecoration(

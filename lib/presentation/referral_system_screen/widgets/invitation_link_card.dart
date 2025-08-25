@@ -74,7 +74,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
               CustomIconWidget(
                 iconName: 'link',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 6,
               ),
               SizedBox(width: 3.w),
               Expanded(
@@ -89,7 +89,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(3.w),
@@ -111,7 +111,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
               maxLines: 2,
             ),
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Row(
             children: [
               Expanded(
@@ -120,7 +120,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
                   icon: CustomIconWidget(
                     iconName: _isLinkCopied ? 'check' : 'content_copy',
                     color: AppTheme.lightTheme.colorScheme.onPrimary,
-                    size: 4.w,
+                    size: 4,
                   ),
                   label: Text(
                     _isLinkCopied ? "Copié !" : "Copier le lien",
@@ -132,7 +132,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
                     backgroundColor: _isLinkCopied
                         ? AppTheme.lightTheme.colorScheme.tertiary
                         : AppTheme.lightTheme.colorScheme.primary,
-                    padding: EdgeInsets.symmetric(vertical: 3.h),
+                    padding: EdgeInsets.symmetric(vertical: 3),
                   ),
                 ),
               ),
@@ -143,7 +143,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
                   icon: CustomIconWidget(
                     iconName: 'share',
                     color: AppTheme.lightTheme.colorScheme.primary,
-                    size: 4.w,
+                    size: 4,
                   ),
                   label: Text(
                     "Partager",
@@ -152,7 +152,7 @@ class _InvitationLinkCardState extends State<InvitationLinkCard> {
                     ),
                   ),
                   style: OutlinedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 3.h),
+                    padding: EdgeInsets.symmetric(vertical: 3),
                   ),
                 ),
               ),

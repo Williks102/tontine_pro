@@ -87,8 +87,8 @@ The app is built with responsive design using the Sizer package:
 ```dart
 // Example of responsive sizing
 Container(
-  width: 50.w, // 50% of screen width
-  height: 20.h, // 20% of screen height
+  width: 50, // 50% of screen width
+  height: 20, // 20% of screen height
   child: Text('Responsive Container'),
 )
 ```

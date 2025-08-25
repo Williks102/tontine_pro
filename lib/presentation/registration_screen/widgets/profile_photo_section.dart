@@ -139,26 +139,26 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 12.w,
-              height: 1.w,
+              width: 12,
+              height: 1,
               decoration: BoxDecoration(
                 color: AppTheme.lightTheme.colorScheme.outline,
                 borderRadius: BorderRadius.circular(2.w),
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Text(
               'Choisir une photo de profil',
               style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             ListTile(
               leading: CustomIconWidget(
                 iconName: 'camera_alt',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 6,
               ),
               title: Text('Prendre une photo'),
               onTap: () {
@@ -172,7 +172,7 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
               leading: CustomIconWidget(
                 iconName: 'photo_library',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 6,
               ),
               title: Text('Choisir depuis la galerie'),
               onTap: () {
@@ -180,7 +180,7 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
                 _pickFromGallery();
               },
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
           ],
         ),
       ),
@@ -193,7 +193,7 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
         _isCameraInitialized &&
         _cameraController != null) {
       return Container(
-        height: 60.h,
+        height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3.w),
           color: Colors.black,
@@ -205,8 +205,8 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
               child: CameraPreview(_cameraController!),
             ),
             Positioned(
-              top: 2.h,
-              left: 4.w,
+              top: 2,
+              left: 4,
               child: IconButton(
                 onPressed: () {
                   setState(() {
@@ -216,7 +216,7 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
                 icon: CustomIconWidget(
                   iconName: 'close',
                   color: Colors.white,
-                  size: 6.w,
+                  size: 6,
                 ),
                 style: IconButton.styleFrom(
                   backgroundColor: Colors.black.withValues(alpha: 0.5),
@@ -224,28 +224,28 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
               ),
             ),
             Positioned(
-              bottom: 4.h,
+              bottom: 4,
               left: 0,
               right: 0,
               child: Center(
                 child: GestureDetector(
                   onTap: _capturePhoto,
                   child: Container(
-                    width: 18.w,
-                    height: 18.w,
+                    width: 18,
+                    height: 18,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
                       border: Border.all(
                         color: AppTheme.lightTheme.colorScheme.primary,
-                        width: 1.w,
+                        width: 1,
                       ),
                     ),
                     child: Center(
                       child: CustomIconWidget(
                         iconName: 'camera_alt',
                         color: AppTheme.lightTheme.colorScheme.primary,
-                        size: 8.w,
+                        size: 8,
                       ),
                     ),
                   ),
@@ -276,19 +276,19 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
               color: AppTheme.lightTheme.colorScheme.primary,
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Center(
             child: GestureDetector(
               onTap: _showImageSourceDialog,
               child: Container(
-                width: 30.w,
-                height: 30.w,
+                width: 30,
+                height: 30,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppTheme.lightTheme.colorScheme.primaryContainer,
                   border: Border.all(
                     color: AppTheme.lightTheme.colorScheme.primary,
-                    width: 0.5.w,
+                    width: 0.5,
                   ),
                 ),
                 child: widget.capturedImage != null
@@ -297,13 +297,13 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
                             ? Image.network(
                                 widget.capturedImage!.path,
                                 fit: BoxFit.cover,
-                                width: 30.w,
-                                height: 30.w,
+                                width: 30,
+                                height: 30,
                               )
                             : CustomImageWidget(
                                 imageUrl: widget.capturedImage!.path,
-                                width: 30.w,
-                                height: 30.w,
+                                width: 30,
+                                height: 30,
                                 fit: BoxFit.cover,
                               ),
                       )
@@ -313,9 +313,9 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
                           CustomIconWidget(
                             iconName: 'add_a_photo',
                             color: AppTheme.lightTheme.colorScheme.primary,
-                            size: 8.w,
+                            size: 8,
                           ),
-                          SizedBox(height: 1.h),
+                          SizedBox(height: 1),
                           Text(
                             'Ajouter\nune photo',
                             textAlign: TextAlign.center,
@@ -331,14 +331,14 @@ class _ProfilePhotoSectionState extends State<ProfilePhotoSection> {
             ),
           ),
           if (widget.capturedImage != null) ...[
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Center(
               child: TextButton.icon(
                 onPressed: _showImageSourceDialog,
                 icon: CustomIconWidget(
                   iconName: 'edit',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 4.w,
+                  size: 4,
                 ),
                 label: Text('Modifier la photo'),
               ),

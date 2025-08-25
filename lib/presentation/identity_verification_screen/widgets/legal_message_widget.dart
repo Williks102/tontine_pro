@@ -155,10 +155,10 @@ En cochant la case ci-dessous, vous confirmez avoir lu, compris et accepté l'in
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           AnimatedContainer(
             duration: Duration(milliseconds: 300),
-            height: _isExpanded ? 40.h : 15.h,
+            height: _isExpanded ? 40 : 15,
             child: Container(
               padding: EdgeInsets.all(3.w),
               decoration: BoxDecoration(
@@ -187,7 +187,7 @@ En cochant la case ci-dessous, vous confirmez avoir lu, compris et accepté l'in
             ),
           ),
           if (!_isExpanded && !_hasReadFully) ...[
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Container(
               padding: EdgeInsets.all(3.w),
               decoration: BoxDecoration(
@@ -215,7 +215,7 @@ En cochant la case ci-dessous, vous confirmez avoir lu, compris et accepté l'in
               ),
             ),
           ],
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
@@ -256,7 +256,7 @@ En cochant la case ci-dessous, vous confirmez avoir lu, compris et accepté l'in
             ),
           ),
           if (_hasReadFully && !_isAcknowledged) ...[
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             Container(
               padding: EdgeInsets.all(3.w),
               decoration: BoxDecoration(

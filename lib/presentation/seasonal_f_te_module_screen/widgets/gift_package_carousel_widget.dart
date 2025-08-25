@@ -40,7 +40,7 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
               CustomIconWidget(
                 iconName: 'redeem',
                 color: AppTheme.lightTheme.colorScheme.primary,
-                size: 6.w,
+                size: 6,
               ),
               SizedBox(width: 2.w),
               Text(
@@ -52,9 +52,9 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
             ],
           ),
         ),
-        SizedBox(height: 2.h),
+        SizedBox(height: 2),
         SizedBox(
-          height: 35.h,
+          height: 35,
           child: PageView.builder(
             controller: _pageController,
             onPageChanged: (index) {
@@ -98,11 +98,11 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
                             child: CustomImageWidget(
                               imageUrl: package["image"] as String,
                               width: double.infinity,
-                              height: 15.h,
+                              height: 15,
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(height: 2.h),
+                          SizedBox(height: 2),
                           Text(
                             package["name"] as String,
                             style: AppTheme.lightTheme.textTheme.titleMedium
@@ -112,7 +112,7 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          SizedBox(height: 1.h),
+                          SizedBox(height: 1),
                           Text(
                             package["description"] as String,
                             style: AppTheme.lightTheme.textTheme.bodySmall,
@@ -125,7 +125,7 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
                             children: [
                               Container(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 2.w, vertical: 0.5.h),
+                                    horizontal: 2, vertical: 0.5),
                                 decoration: BoxDecoration(
                                   color: AppTheme.lightTheme.colorScheme.primary
                                       .withValues(alpha: 0.1),
@@ -154,7 +154,7 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
                                   child: CustomIconWidget(
                                     iconName: 'arrow_forward',
                                     color: Colors.white,
-                                    size: 4.w,
+                                    size: 4,
                                   ),
                                 ),
                               ),
@@ -169,7 +169,7 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
             },
           ),
         ),
-        SizedBox(height: 2.h),
+        SizedBox(height: 2),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
@@ -177,8 +177,8 @@ class _GiftPackageCarouselWidgetState extends State<GiftPackageCarouselWidget> {
             (index) => AnimatedContainer(
               duration: const Duration(milliseconds: 300),
               margin: EdgeInsets.symmetric(horizontal: 1.w),
-              width: index == _currentIndex ? 6.w : 2.w,
-              height: 1.h,
+              width: index == _currentIndex ? 6.w : 2,
+              height: 1,
               decoration: BoxDecoration(
                 color: index == _currentIndex
                     ? AppTheme.lightTheme.colorScheme.primary

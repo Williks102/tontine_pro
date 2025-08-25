@@ -42,7 +42,7 @@ class QuickActionsWidget extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Row(
             children: [
               Expanded(
@@ -64,7 +64,7 @@ class QuickActionsWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Row(
             children: [
               Expanded(
@@ -122,7 +122,7 @@ class QuickActionsWidget extends StatelessWidget {
                   size: 24,
                 ),
               ),
-              SizedBox(height: 1.h),
+              SizedBox(height: 1),
               Text(
                 title,
                 style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(

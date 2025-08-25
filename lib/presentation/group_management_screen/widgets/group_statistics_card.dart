@@ -16,7 +16,7 @@ class GroupStatisticsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: AppTheme.lightTheme.colorScheme.surface,
@@ -48,7 +48,7 @@ class GroupStatisticsCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Row(
             children: [
               Expanded(
@@ -71,25 +71,25 @@ class GroupStatisticsCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Text(
             'Santé du Groupe',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           _buildHealthIndicator(context),
-          SizedBox(height: 3.h),
+          SizedBox(height: 3),
           Text(
             'Progression des Paiements',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 2),
           Container(
-            height: 30.h,
+            height: 30,
             child: _buildPaymentChart(),
           ),
         ],
@@ -117,7 +117,7 @@ class GroupStatisticsCard extends StatelessWidget {
             color: color,
             size: 24,
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1),
           Text(
             value,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -163,7 +163,7 @@ class GroupStatisticsCard extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 1.h),
+        SizedBox(height: 1),
         LinearProgressIndicator(
           value: healthScore / 100,
           backgroundColor: AppTheme.lightTheme.colorScheme.primaryContainer,

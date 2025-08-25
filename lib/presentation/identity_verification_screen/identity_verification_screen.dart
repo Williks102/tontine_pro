@@ -190,7 +190,7 @@ class _IdentityVerificationScreenState
                 'Votre demande de vérification d\'identité a été soumise avec succès.',
                 style: AppTheme.lightTheme.textTheme.bodyMedium,
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 2),
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
@@ -207,7 +207,7 @@ class _IdentityVerificationScreenState
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 0.5.h),
+                    SizedBox(height: 0.5),
                     Text(
                       '24 à 48 heures ouvrables',
                       style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
@@ -230,7 +230,7 @@ class _IdentityVerificationScreenState
                 },
                 child: Text('Continuer'),
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 2.h),
+                  padding: EdgeInsets.symmetric(vertical: 2),
                 ),
               ),
             ),
@@ -334,7 +334,7 @@ class _IdentityVerificationScreenState
           children: [
             // Progress indicator
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               child: VerificationProgressWidget(
                 currentStep: _currentStep,
                 totalSteps: _totalSteps,
@@ -348,9 +348,9 @@ class _IdentityVerificationScreenState
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: Column(
                   children: [
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 2),
                     _buildCurrentStepContent(),
-                    SizedBox(height: 4.h),
+                    SizedBox(height: 4),
                   ],
                 ),
               ),
@@ -378,7 +378,7 @@ class _IdentityVerificationScreenState
                           onPressed: _previousStep,
                           child: Text('Précédent'),
                           style: OutlinedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(vertical: 2.h),
+                            padding: EdgeInsets.symmetric(vertical: 2),
                           ),
                         ),
                       ),
@@ -392,7 +392,7 @@ class _IdentityVerificationScreenState
                             ? 'Finaliser'
                             : 'Suivant'),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 2.h),
+                          padding: EdgeInsets.symmetric(vertical: 2),
                         ),
                       ),
                     ),

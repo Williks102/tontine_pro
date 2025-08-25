@@ -24,7 +24,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+      margin: EdgeInsets.symmetric(horizontal: 4, vertical: 1),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3.w),
       ),
@@ -38,7 +38,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                 CustomIconWidget(
                   iconName: 'schedule',
                   color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 6.w,
+                  size: 6,
                 ),
                 SizedBox(width: 3.w),
                 Text(
@@ -49,19 +49,19 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                 ),
               ],
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 3),
             Text(
               'Créneaux disponibles:',
               style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 2.h),
+            SizedBox(height: 2),
             ListView.separated(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: widget.availableSlots.length,
-              separatorBuilder: (context, index) => SizedBox(height: 1.h),
+              separatorBuilder: (context, index) => SizedBox(height: 1),
               itemBuilder: (context, index) {
                 final slot = widget.availableSlots[index];
                 final isSelected = _selectedSlot?["id"] == slot["id"];
@@ -103,7 +103,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                             color: isSelected
                                 ? Colors.white
                                 : Colors.grey.shade600,
-                            size: 4.w,
+                            size: 4,
                           ),
                         ),
                         SizedBox(width: 3.w),
@@ -121,13 +121,13 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                                       : null,
                                 ),
                               ),
-                              SizedBox(height: 0.5.h),
+                              SizedBox(height: 0.5),
                               Row(
                                 children: [
                                   CustomIconWidget(
                                     iconName: 'access_time',
                                     color: Colors.grey.shade600,
-                                    size: 3.w,
+                                    size: 3,
                                   ),
                                   SizedBox(width: 1.w),
                                   Text(
@@ -140,13 +140,13 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 0.5.h),
+                              SizedBox(height: 0.5),
                               Row(
                                 children: [
                                   CustomIconWidget(
                                     iconName: 'people',
                                     color: Colors.grey.shade600,
-                                    size: 3.w,
+                                    size: 3,
                                   ),
                                   SizedBox(width: 1.w),
                                   Text(
@@ -166,7 +166,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                           CustomIconWidget(
                             iconName: 'check_circle',
                             color: AppTheme.lightTheme.colorScheme.primary,
-                            size: 5.w,
+                            size: 5,
                           ),
                       ],
                     ),
@@ -175,7 +175,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
               },
             ),
             if (_selectedSlot != null) ...[
-              SizedBox(height: 3.h),
+              SizedBox(height: 3),
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(3.w),
@@ -191,7 +191,7 @@ class _PickupSchedulingWidgetState extends State<PickupSchedulingWidget> {
                     CustomIconWidget(
                       iconName: 'check_circle',
                       color: Colors.green.shade600,
-                      size: 5.w,
+                      size: 5,
                     ),
                     SizedBox(width: 2.w),
                     Expanded(

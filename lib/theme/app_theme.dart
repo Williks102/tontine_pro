@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 /// A class that contains all theme configurations for the application.
 /// Implements Violet & Gold Fintech design with Royal Palette
@@ -696,54 +697,54 @@ class AppTheme {
     return TextTheme(
       // Display styles for large headings
       displayLarge: GoogleFonts.inter(
-        fontSize: 57,
+        fontSize: 28,
         fontWeight: FontWeight.w700,
         color: textPrimary,
         letterSpacing: -0.25,
       ),
       displayMedium: GoogleFonts.inter(
-        fontSize: 45,
+        fontSize: 24,
         fontWeight: FontWeight.w600,
         color: textPrimary,
       ),
       displaySmall: GoogleFonts.inter(
-        fontSize: 36,
+        fontSize: 20,
         fontWeight: FontWeight.w600,
         color: textPrimary,
       ),
 
       // Headline styles for section headers
       headlineLarge: GoogleFonts.inter(
-        fontSize: 32,
+        fontSize: 20,
         fontWeight: FontWeight.w600,
         color: textPrimary,
       ),
       headlineMedium: GoogleFonts.inter(
-        fontSize: 28,
+        fontSize: 18,
         fontWeight: FontWeight.w600,
         color: textPrimary,
       ),
       headlineSmall: GoogleFonts.inter(
-        fontSize: 24,
+        fontSize: 16,
         fontWeight: FontWeight.w600,
         color: textPrimary,
       ),
 
       // Title styles for card headers and important text
       titleLarge: GoogleFonts.inter(
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
         color: textPrimary,
         letterSpacing: 0,
       ),
       titleMedium: GoogleFonts.inter(
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
         color: textPrimary,
         letterSpacing: 0.15,
       ),
       titleSmall: GoogleFonts.inter(
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
         color: textPrimary,
         letterSpacing: 0.1,
@@ -751,19 +752,19 @@ class AppTheme {
 
       // Body styles for main content
       bodyLarge: GoogleFonts.inter(
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: FontWeight.w400,
         color: textPrimary,
         letterSpacing: 0.5,
       ),
       bodyMedium: GoogleFonts.inter(
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
         color: textPrimary,
         letterSpacing: 0.25,
       ),
       bodySmall: GoogleFonts.inter(
-        fontSize: 12,
+        fontSize: 11,
         fontWeight: FontWeight.w400,
         color: textSecondary,
         letterSpacing: 0.4,
@@ -771,19 +772,19 @@ class AppTheme {
 
       // Label styles for buttons and small text
       labelLarge: GoogleFonts.inter(
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
         color: textPrimary,
         letterSpacing: 0.1,
       ),
       labelMedium: GoogleFonts.inter(
-        fontSize: 12,
+        fontSize: 10,
         fontWeight: FontWeight.w500,
         color: textSecondary,
         letterSpacing: 0.5,
       ),
       labelSmall: GoogleFonts.inter(
-        fontSize: 11,
+        fontSize: 08,
         fontWeight: FontWeight.w400,
         color: textDisabled,
         letterSpacing: 0.5,
@@ -814,6 +815,12 @@ class AppTheme {
   static Color getWarningColor(bool isLight) {
     return isLight ? warningLight : warningDark;
   }
+
+  // Fonction helper pour tailles responsive
+static double getResponsiveFontSize(double baseSize) {
+  // Utilise Sizer pour ajuster selon la taille d'écran
+  return baseSize.sp;
+}
 
   /// Helper method to get accent color based on theme
   static Color getAccentColor(bool isLight) {
